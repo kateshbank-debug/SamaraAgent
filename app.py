@@ -29,10 +29,10 @@ llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 chain = prompt | llm
 
 st.title("Samara Agent: Генератор контента")
-style = st.text_input("Стиль (informal/formal):", "informal")
-target_audience = st.text_input("Целевая аудитория:", "bloggers")
+style = st.selectbox("Стиль (informal/formal):", ["informal", "formal"])
+target_audience = st.selectbox("Целевая аудитория:", ["bloggers", "marketers", "SMM specialists", "small business owners"])
 keywords = st.text_input("Ключевые слова (через запятую):", "AI content generation, LangChain")
-language = st.text_input("Язык:", "English")
+language = st.selectbox("Язык:", ["English", "Russian"])
 length = st.text_input("Длина (слов):", "1000")
 topic = st.text_input("Тема:", "How AI Agents Revolutionize Content Creation")
 text = st.text_area("Контекст:")
